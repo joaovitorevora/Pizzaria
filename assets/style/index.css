@@ -1,0 +1,186 @@
+/* Reset de estilos padrão para evitar diferenças de estilo entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0;
+}
+
+.pizza-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 10px;
+    text-align: center;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.pizza-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.pizza-info h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.pizza-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.pizza-image {
+    padding: 3%;
+    border-radius: 30%;
+    max-width: 200px; /* tamanho da imagem */
+    height: auto;
+    margin-left: 20px;
+}
+
+.refri-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.refri-info {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.refri-info h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.refri-info p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+
+.price {
+    flex: 1;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.order-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #2980b9;
+}
+
+.order-button {
+  background-color: #333; 
+  color: #fff; 
+  border: none; 
+  padding: 5px 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; /* adiciona transição na mudança de cor */
+}
+
+.order-button:hover {
+  background-color: #555; /* Efeito de hover para o botão de pedido */
+}
+
+/* Estilo da seção de pedido */
+.order {
+  background-color: #fff; /* Cor de fundo da seção de pedido */
+  padding: 20px; 
+  width: 40%;
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.order h2 {
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
+
+.order-list {
+  list-style: none;
+}
+
+.order-list li {
+  display: flex; 
+  justify-content: space-between; /*espaço horizontal entre os itens do pedido */
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; /* Adiciona uma linha inferior a cada item do pedido */
+}
+#AlinharPedido{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  width: 100%;
+  
+}
+
+.total-price {
+  font-weight: bold; /*fonte em negrito para o preço total */
+}
+/* botao de finalizar */
+.checkout-button {
+  background-color: #333; 
+  color: #fff; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin-top: 10px; 
+}
+
+.checkout-button:hover {
+  background-color: #555; /* Efeito de hover para o botão de finalizar pedido */
+}
+
+.container-cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+/* mobile */
+@media (max-width: 400px) {}
+
+@media (max-width: 481px) and (max-width: 767px) {}
+/* tablets pequenos */
+@media (max-width: 768px) and (max-width: 991px) {}
+/* tablets e laptops  */
+@media (max-width: 992px) and (max-width: 1199px) {}
+/* desktops */
+@media (max-width: 1200px) and (max-width: 1919px) {}
+/* large screen */
+@media (min-width: 1920px) {
+}

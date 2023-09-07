@@ -1,0 +1,42 @@
+header {
+    background-color: brown;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo-container {
+    position: relative;
+    width: 7em;
+    margin-left: 2.5em; 
+    
+}
+
+.logo {
+    position: absolute;
+    width: 7em;
+    margin-left: 2.5em;
+    top: 2px;
+    transform: rotateX(30deg); /* Gira a imagem em torno do eixo X */
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5)); 
+}
+
+.navlinks {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    
+  }
+  .navlinks > li {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+  }
+  .navlinks > li > a {
+    text-decoration:none ;
+    color: inherit;
+  }
+  .navlinks > li:hover {
+    background-color: var(--bg-color-hover);
+    box-shadow: inset 4px 4px 3px 0px #150000;
+  }
