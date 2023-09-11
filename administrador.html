@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administração</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/rodape.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style/administrador.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/index.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="shortcut icon" type="imagex/png" href="./assets/img/logo.png">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="text-align: center;">Pizzaria</h1>
+            <p style="text-align: center;">Faça seu pedido de forma rápida e fácil!</p>
+        </div>
+        <!-- container do logo -->
+        <div class="logo-container">
+            <img
+                id="logoHeader"
+                class="logo"
+                src="./assets/img/logo.png"
+                alt="logo"
+            />
+        </div>
+        <!-- fim container do logo -->
+        
+        <!-- links -->
+        <div>    
+            <ul class="navlinks">
+                <li class="active"  id="link1"><a href="./index.html">Inicio</a></li>
+                <li id="link2"><a href="./index.html">Cardápio</a></li>
+                <li id="link3"><a href="./login.html">Login</a></li>
+            </ul>
+        </div>
+        <!-- fim links -->
+    </header>
+    <h1 id="adm">ADMINISTRADOR</h1>
+    <div>
+        <ul class="linkAdm">
+            <li><a href="#" onclick="showForm('add-pizza-form')">Adicionar Pizza</a></li>
+            <li><a href="#" onclick="showForm('add-bebida-form')">Adicionar Bebida</a></li>
+            <li><a href="#" onclick="showForm('edit-pizza-form')">Editar Pizza</a></li>
+            <li><a href="#" onclick="showForm('edit-bebida-form')">Editar Bebida</a></li>
+            <li><a href="#" onclick="showForm('delete-pizza-form')">Excluir Pizza</a></li>
+            <li><a href="#" onclick="showForm('delete-bebida-form')">Excluir Bebida</a></li>
+        </ul>
+    </div>
+    <main>
+        <!-- Formulário para adicionar Pizza -->
+        <section id="add-pizza-form" class="hidden" class="FormAlinhar">
+            <h2>Adicionar Pizza</h2>
+            <form action="processar_adicionar_pizza.php" method="post">
+                <label for="pizza-nome">Nome:</label>
+                <input type="text" id="pizza-nome" name="pizza-nome" required>
+
+                <label for="pizza-descricao">Descrição:</label>
+                <textarea id="pizza-descricao" name="pizza-descricao" rows="4" required style="resize: none;"></textarea>
+                <label for="pizza-preco">Preço:</label>
+                <input type="text" id="pizza-preco" name="pizza-preco" required>
+                <label for="pizza-imagem">Imagem:</label>
+                <input type="file" id="pizza-imagem" name="pizza-imagem" accept="image/*" required>
+
+                <button type="submit">Adicionar Pizza</button>
+            </form>
+        </section>
+
+        <!-- Formulário para adicionar Bebida -->
+        <section id="add-bebida-form" class="hidden">
+            <h2>Adicionar Bebida</h2>
+            <form action="processar_adicionar_bebida.php" method="post">
+                <label for="bebida-nome">Nome:</label>
+                <input type="text" id="bebida-nome" name="bebida-nome" required>
+
+                <label for="bebida-descricao">Descrição:</label>
+                <textarea id="bebida-descricao" name="bebida-descricao" rows="4" required style="resize: none";></textarea>
+                <label for="bebida-preco">Preço:</label>
+                <input type="text" id="bebida-preco" name="bebida-preco" required>
+
+                <label for="bebida-imagem">Imagem:</label>
+                <input type="file" id="bebida-imagem" name="bebida-imagem" accept="image/*" required>
+
+                <button type="submit">Adicionar Bebida</button>
+            </form>
+        </section>
+
+        <!-- Formulário para editar Pizza -->
+        <section id="edit-pizza-form" class="hidden">
+            <h2>Editar Pizza</h2>
+            <form action="processar_atualizar_pizza.php" method="post">
+                <label for="pizza-id-update">ID da Pizza:</label>
+                <input type="text" id="pizza-id-update" name="pizza-id-update" required>
+                
+                <label for="pizza-nome">Novo Nome:</label>
+                <input type="text" id="pizza-nome" name="pizza-nome" required>
+                
+                <label for="pizza-descricao">Nova Descrição:</label>
+                <textarea id="pizza-descricao" name="pizza-descricao" required style="resize: none";></textarea>
+                
+                <label for="edit-pizza-preco">Novo Preço:</label>
+                <input type="text" id="edit-pizza-preco" name="edit-pizza-preco" required>
+
+                <button type="submit">Atualizar Pizza</button>
+            </form>
+        </section>
+
+        <!-- Formulário para editar Bebida -->
+        <section id="edit-bebida-form" class="hidden">
+            <h2>Editar Bebida</h2>
+            <form action="processar_atualizar_bebida.php" method="post">
+                <label for="bebida-id-update">ID da Bebida:</label>
+                <input type="text" id="bebida-id-update" name="bebida-id-update" required>
+                
+                <label for="bebida-nome">Novo Nome:</label>
+                <input type="text" id="bebida-nome" name="bebida-nome" required>
+                
+                <label for="bebida-descricao">Nova Descrição:</label>
+                <textarea id="bebida-descricao" name="bebida-descricao" required style="resize: none";></textarea>
+                
+                <label for="edit-bebida-preco">Novo Preço:</label>
+                <input type="text" id="edit-bebida-preco" name="edit-bebida-preco" required>
+
+                <button type="submit">Atualizar Bebida</button>
+            </form>
+        </section>
+
+        <!-- Formulário para excluir Pizza -->
+        <section id="delete-pizza-form" class="hidden">
+            <h2>Remover Pizza</h2>
+            <form action="processar_remover_pizza.php" method="post">
+                <label for="pizza-id">ID da Pizza:</label>
+                <input type="text" id="pizza-id" name="pizza-id" required>
+
+                <button type="submit">Remover Pizza</button>
+            </form>
+        </section>
+
+        <!-- Formulário para excluir Bebida -->
+        <section id="delete-bebida-form" class="hidden">
+            <h2>Remover Bebida</h2>
+            <form action="processar_remover_bebida.php" method="post">
+                <label for="bebida-id">ID da Bebida:</label>
+                <input type="text" id="bebida-id" name="bebida-id" required>
+
+                <button type="submit">Remover Bebida</button>
+            </form>
+        </section>
+
+        
+    </main>
+    <footer id="footerAdm">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" class="icon facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:unip@gmail.com" class="icon email"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="tel:+5519937017000" class="icon phone"><i class="fas fa-phone"></i> Telefone</a>
+            </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14739.630155386581!2d-47.3786496!3d-22.5451361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c87e183312f7fb%3A0xeb8db79604e301c2!2sUNIP%20Limeira%20-%20Universidade%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1694138456639!5m2!1spt-BR!2sbr" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+        <script src="assets/js/administrador.js"></script>
+</body>
+</html>
