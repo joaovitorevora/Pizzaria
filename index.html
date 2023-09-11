@@ -3,12 +3,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Lanchonete</title>
+    <title>Pizzaria</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/style/index.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/style/header.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/style/rodape.css'>
-      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="shortcut icon" type="imagex/png" href="./assets/img/logo.png">
+
 </head>
 <body>
 <!-- cabeçalho -->
@@ -34,7 +36,6 @@
                 <li class="active"  id="link1"><a href="./index.html">Inicio</a></li>
                 <li id="link2"><a href="./index.html">Cardápio</a></li>
                 <li id="link3"><a href="./login.html">Login</a></li>
-                <li id="link4"><a href="./cadastro.html">Cadastre-se</a></li>
             </ul>
         </div>
         <!-- fim links -->
@@ -48,14 +49,16 @@
                 <ul class="order-list" id="order-list">
                     <!-- Itens do pedido serão adicionados aqui -->
                 </ul>
-                <p> <span class="total-price">$0.00</span></p>
+                <p> <span class="total-price">R$0.00</span></p>
+        
+        
                 <button class="checkout-button">Finalizar Pedido</button>
             </section>
         </div>
     <!-- fim da seção de pedidos -->
 
 <!-- pizzas -->
-        <h2 class="pizza-info" style="margin-top: 3%;">PIZZAS SALGADAS</h2>
+        <h2 class="pizza-info" style="margin-top: 3%; border-bottom: 2px brown solid;">PIZZAS SALGADAS</h2>
     
         <div class="container-cards">    
     <!-- card pizza 1 -->        
@@ -101,7 +104,7 @@
             <div class="pizza-card">
             
                 <div class="pizza-info">
-                    <h3>4- ESPECIAL CALABRESA</h3>
+                    <h3>4 - ESPECIAL CALABRESA</h3>
                     <p>MOLHO, MUSSARELA, CALABRESA, OVO, CEBOLA, BACON, AZEITONA E ORÉGANO.</p>
                     <p class="price">Preço: R$51.00</p>
                     <button class="order-button">Pedir</button>
@@ -116,7 +119,7 @@
 <!-- fim pizzas -->
 
 <!-- inicio refri's -->
-        <h2 class="refri-info" style="margin-top: 3%;">Bebidas</h2>
+        <h2 class="refri-info" style="margin-top: 15%; border-bottom: 2px brown solid;">BEBIDAS</h2>
  
         <!-- container refri's -->
         <div class="container-cards"> 
@@ -124,7 +127,7 @@
             <div class="refri-card">
     
                 <div class="refri-info">
-                    <h3>Refrigerante 350ml</h3>
+                    <h3>REFRIGERANTE 350ML</h3>
                     <p class="price">Preço: R$6.00</p>
                     <button class="order-button">Pedir</button>
                 </div>
@@ -136,7 +139,7 @@
             <div class="refri-card">
     
                 <div class="refri-info">
-                    <h3>Sucos 500ml</h3>
+                    <h3>SUCOS 500ML</h3>
                     <p class="price">Preço: R$9.00</p>
                     <button class="order-button">Pedir</button>
                 </div>
@@ -148,7 +151,7 @@
             <div class="refri-card">
     
                 <div class="refri-info">
-                    <h3>Refrigerante 600ml</h3>
+                    <h3>REFRIGERANTE 600ML</h3>
                     <p class="price">Preço: R$8.00</p>
                     <button class="order-button">Pedir</button>
                 </div>
@@ -160,7 +163,7 @@
             <div class="refri-card">
     
                 <div class="refri-info">
-                    <h3>Refrigerante 2L</h3>
+                    <h3>REFRIGERANTE 2L</h3>
                     <p class="price">Preço: R$15.00</p>
                     <button class="order-button">Pedir</button>
                 </div>
@@ -170,16 +173,41 @@
             <!-- fim refri 3 -->
         </div>        
         <!-- fim refri's -->
+        <h2  style="margin-top: 3%; text-align: center; border-bottom: 2px brown solid;">PIZZARIA</h2>
+        <div class="imagens">
+            
+            <div class="imagem">
+                <img src="assets/img/pizzaria1.png">
+            </div>
+            <div class="imagem">
+                <img src="assets/img/pizzaria2.png">
+            </div>
+            <div class="imagem">
+                <img src="assets/img/pizzaria3.png">
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <!-- ----------------Conteúdo rodapé----------------- -->
-        
-        
+    <footer class="footerIndex">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" class="icon facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:unip@gmail.com" class="icon email"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="tel:+5519937017000" class="icon phone"><i class="fas fa-phone"></i> Telefone</a>
+            </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14739.630155386581!2d-47.3786496!3d-22.5451361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c87e183312f7fb%3A0xeb8db79604e301c2!2sUNIP%20Limeira%20-%20Universidade%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1694138456639!5m2!1spt-BR!2sbr" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
     </footer>
+    
+    
     <script src="assets/js/pedidos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="assets/js/pagamento.js"></script>
 
 </body>
 </html>
