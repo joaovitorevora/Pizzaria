@@ -1,3 +1,4 @@
+@import "~font-awesome/css/font-awesome.css";
 /* Reset de estilos padrão para evitar diferenças de estilo entre navegadores */
 * {
     margin: 0;
@@ -20,11 +21,13 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 45%;
     margin: 10px;
+    margin-top: 1%;
     text-align: center;
     align-items: center; /* Centraliza verticalmente o conteúdo */
 }
 
 .pizza-info {
+    width: 50%;
     flex: 1;
     padding: 20px;
     text-align: left;
@@ -45,7 +48,7 @@ body {
     border-radius: 30%;
     max-width: 200px; /* tamanho da imagem */
     height: auto;
-    margin-left: 20px;
+    margin-left: 1%;
 }
 
 .refri-card {
@@ -55,6 +58,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 30%;
     margin: 10px;
+    margin-top: 1%;
     text-align: center;
     align-items: center; /* Centraliza verticalmente o conteúdo */
 }
@@ -63,6 +67,7 @@ body {
   flex: 1;
   padding: 20px;
   text-align: left;
+  width: 50%;
 }
 
 .refri-info h3 {
@@ -132,6 +137,8 @@ body {
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #ccc; /* Adiciona uma linha inferior a cada item do pedido */
+  width: 70%;
+  margin-bottom: 2%;
 }
 #AlinharPedido{
   
@@ -143,7 +150,7 @@ body {
 }
 
 .total-price {
-  font-weight: bold; /*fonte em negrito para o preço total */
+  font-weight: bold; 
 }
 /* botao de finalizar */
 .checkout-button {
@@ -165,6 +172,67 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.remove-button{
+  background-color: #333; 
+  color: #fff; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin-top: 10px; 
+}
+.remove-button:hover{
+  background-color: #555;
+}
+
+
+
+.footerIndex {
+  margin-top: 5%;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Estilos para os ícones */
+.icon {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: brown;
+}
+
+.imagens{
+  display: flex;
+  justify-content: center;
+}
+
+.imagem{
+  padding: 3%;
+}
+
+.imagem img {
+  border-radius: 3%;
+}
+
+.imagem:hover{
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
 
 
 
