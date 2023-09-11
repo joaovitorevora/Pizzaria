@@ -1,0 +1,17 @@
+/* Estilos CSS para alinhar à direita e estilizar os checkboxes */
+.payment-options-right {
+    float: right;
+    text-align: right;
+    margin-right: 20px; 
+    width: 200px; 
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-option input[type="checkbox"] {
+    margin-right: 10px;
+}
