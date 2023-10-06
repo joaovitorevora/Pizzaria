@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pizzaria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/rodape.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="shortcut icon" type="imagex/png" href="./assets/img/logo.png">
+
+</head>
+<body>
+
+    <!-- seção de pedidos -->
+    <div id="AlinharPedido">
+        <section class="order">
+            <h2>Seu Pedido</h2>
+            <ul class="order-list" id="order-list">
+                <!-- Itens do pedido serão adicionados aqui -->
+            </ul>
+            <p> <span class="total-price">R$0.00</span></p>
+    
+    
+            <button class="checkout-button">Finalizar Pedido</button>
+        </section>
+    </div>
+<!-- fim da seção de pedidos -->
+    
+
+    <footer class="footerIndex">
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" class="icon facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:unip@gmail.com" class="icon email"><i class="fas fa-envelope"></i> E-mail</a>
+                <a href="tel:+5519937017000" class="icon phone"><i class="fas fa-phone"></i> Telefone</a>
+            </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14739.630155386581!2d-47.3786496!3d-22.5451361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c87e183312f7fb%3A0xeb8db79604e301c2!2sUNIP%20Limeira%20-%20Universidade%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1694138456639!5m2!1spt-BR!2sbr" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/pedidos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/pagamento.js"></script>
+</body>
+</html>
