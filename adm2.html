@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administração</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/rodape.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style/administrador.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/style/index.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="./assets/img/logo.png">
+</head>
+<body>
+    
+    <header>
+        <div>
+            <h1 style="text-align: center;">Pizzaria</h1>
+            <p style="text-align: center;">Faça seu pedido de forma rápida e fácil!</p>
+        </div>
+        <!-- container do logo -->
+        <div class="logo-container">
+            <img
+                id="logoHeader"
+                class="logo"
+                src="./assets/img/logo.png"
+                alt="logo"
+            />
+        </div>
+        <!-- fim container do logo -->
+        
+        <!-- links -->
+        <div>    
+            <ul class="navlinks">
+                <li class="active"  id="link1"><a href="./index.html">Inicio</a></li>
+                <li id="link2"><a href="./index.html">Cardápio</a></li>
+                <li id="link3"><a href="./login.html">Login</a></li>
+            </ul>
+        </div>
+        <!-- fim links -->
+    </header>
+    <div class="container">
+        <button id="addPizzaButton" class="edit-button">
+            <i class="fas fa-plus"></i> Adicionar Pizza
+        </button>
+    </div>
+
+   <!-- pizzas -->
+   <h2 class="pizza-info" style="margin-top: 3%; border-bottom: 2px brown solid;">PIZZAS SALGADAS</h2>
+    
+   <div class="container-cards" id="pizzaContainer">
+
+    
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="assets/js/admin2.js"></script>
+</body>
+</html>
