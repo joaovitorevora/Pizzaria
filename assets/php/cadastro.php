@@ -2,7 +2,7 @@
 // Verifique se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Conecte-se ao banco de dados MySQL
-    $conn = new mysqli("localhost:3306", "root", "root", "pizzaria");
+    $conn = new mysqli("localhost:3306", "root", "Admin@unip", "pizzaria");
 
     // Verifique a conexão
     if ($conn->connect_error) {
@@ -31,7 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Executa a consulta
     if ($stmt->execute()) {
-        echo "Cliente cadastrado com sucesso!";
+        echo '<script>
+                alert("Credenciais inválidas. Tente novamente.");
+                window.location.href = "../../index.html";
+            </script>';
     } else {
         echo "Erro ao cadastrar o cliente: " . $stmt->error;
     }
