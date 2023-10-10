@@ -1,4 +1,3 @@
-// Função para abrir o modal de edição
 function editPizza(button) {
     // Encontre o elemento pai da pizza a ser editada
     var pizzaDiv = button.closest(".pizza-card");
@@ -7,12 +6,39 @@ function editPizza(button) {
     var pizzaName = pizzaDiv.querySelector("h3").textContent;
     var pizzaDescription = pizzaDiv.querySelector("p:nth-child(2)").textContent;
     var pizzaPrice = pizzaDiv.querySelector(".price").textContent.replace("Preço: R$", "");
-
     
-    // Cria um modal de edição personalizado com SweetAlert2
+    // Envie uma solicitação AJAX para obter o ID da pizza com base no nome
+    fetch('assets/php/editar.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            getPizzaId: true,
+            pizzaName: pizzaName
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.pizzaId) {
+            // Se a solicitação retornar um ID de pizza válido, abra o modal de edição com o ID
+            openEditPizzaModal(data.pizzaId, pizzaName, pizzaDescription, pizzaPrice);
+        } else {
+            // Trata o caso em que o ID da pizza não foi encontrado
+            Swal.fire('Erro', 'Não foi possível encontrar o ID da pizza.', 'error');
+        }
+    })
+    .catch(error => {
+        Swal.fire('Erro', 'Erro ao obter o ID da pizza.', 'error');
+    });
+}
+
+function openEditPizzaModal(pizzaId, pizzaName, pizzaDescription, pizzaPrice) {
+    // Cria um modal de edição personalizado com SweetAlert2, passando o pizzaId
     Swal.fire({
         title: 'Editar Pizza',
         html:
+            `<input id="pizzaId" type="hidden" value="${pizzaId}">` + // Adicione o campo oculto para o ID
             `<input id="pizzaName" class="swal2-input" value="${pizzaName}" placeholder="Nome da Pizza">` +
             `<textarea id="pizzaDescription" class="swal2-input" placeholder="Descrição da Pizza">${pizzaDescription}</textarea>` +
             `<input id="pizzaPrice" class="swal2-input" value="${pizzaPrice}" placeholder="Preço da Pizza">` +
@@ -21,28 +47,37 @@ function editPizza(button) {
         cancelButtonText: 'Cancelar',
         confirmButtonText: 'Salvar',
         preConfirm: () => {
-            // Pega os valores dos campos do modal
+            // Pega os valores dos campos do modal, incluindo o ID
+            var pizzaId = Swal.getPopup().querySelector('#pizzaId').value;
             var newName = Swal.getPopup().querySelector('#pizzaName').value;
             var newDescription = Swal.getPopup().querySelector('#pizzaDescription').value;
             var newPrice = Swal.getPopup().querySelector('#pizzaPrice').value;
             var newImage = Swal.getPopup().querySelector('#pizzaImage').files[0];
 
-            // Atualiza os campos da pizza no cartão correspondente
-            pizzaDiv.querySelector("h3").textContent = newName;
-            pizzaDiv.querySelector("p:nth-child(2)").textContent = newDescription;
-            pizzaDiv.querySelector(".price").textContent = "Preço: R$" + newPrice;
-
-            // Atualiza a imagem da pizza
-            if (newImage) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    pizzaDiv.querySelector(".pizza-image").src = e.target.result;
-                };
-                reader.readAsDataURL(newImage);
-            }
+            // Envie os dados para o PHP usando AJAX para atualizar a pizza no banco de dados
+            return fetch('assets/php/editar.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pizzaId, newName, newDescription, newPrice, newImage })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    Swal.fire('Sucesso', 'Pizza atualizada com sucesso!', 'success');
+                    // Atualize os detalhes da pizza no cartão correspondente se desejar
+                } else {
+                    Swal.fire('Erro', 'Erro ao atualizar pizza.', 'error');
+                }
+            })
+            .catch(error => {
+                Swal.fire('Erro', 'Erro ao enviar dados ao servidor.', 'error');
+            });
         }
     });
 }
+
 
 // Função para adicionar uma pizza ao container
 function addPizzaToContainer(name, description, price, imageSrc) {
@@ -108,15 +143,30 @@ function openAddPizzaModalWithSweetAlert() {
                 return false;
             }
 
-            return { name, description, price, imageSrc };
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            const { name, description, price, imageSrc } = result.value;
-            addPizzaToContainer(name, description, price, imageSrc);
+            // Enviar os dados para o PHP usando AJAX
+            return fetch('assets/php/administrador.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, description, price, imageSrc })
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    Swal.fire('Sucesso', 'Pizza adicionada com sucesso!', 'success');
+                    addPizzaToContainer(name, description, price, imageSrc);
+                } else {
+                    Swal.fire('Erro', 'Erro ao adicionar pizza.', 'error');
+                }
+            })
+            .catch(error => {
+                Swal.fire('Erro', 'Erro ao enviar dados ao servidor.', 'error');
+            });
         }
     });
 }
+
 
 // Função para lidar com a seleção de imagem
 function handleImageUpload(event) {
@@ -134,8 +184,3 @@ function handleImageUpload(event) {
 document.getElementById("addPizzaButton").addEventListener("click", function() {
     openAddPizzaModalWithSweetAlert();
 });
-
-
-
-
-
